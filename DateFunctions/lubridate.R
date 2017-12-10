@@ -1,5 +1,6 @@
 install.packages("lubridate")
 library(lubridate)
+
 date<-now()
 
 am(date)
@@ -9,6 +10,9 @@ pm(date)
 
 day(date)
 month(date)
+month(date, label = T)
+month(date, label = T, abbr = F)
+
 year(date)
 
 hour(date)
@@ -81,8 +85,6 @@ int_overlaps(Employee1Vacation, Employee2Vacation)
 setdiff(Employee2Vacation, Employee1Vacation)
 setdiff(Employee1Vacation, Employee2Vacation)
 
-year
-str_c()
 
 leap_year(2017)
 
@@ -92,3 +94,35 @@ leap_year(2017)
 int_start(Employee2Vacation)
 int_end(Employee2Vacation)
 
+
+
+
+
+round_date(dmy_hms('13-12-2017 11:59:00'), unit = "week")
+round_date(dmy_hms('13-12-2017 12:00:00'), unit = "week")
+
+round_date(dmy_hms('13-12-2017 11:59:00'), unit = "day")
+round_date(dmy_hms('13-12-2017 12:00:00'), unit = "day")
+
+
+
+
+date1 = dmy_hms('10-12-2017 10:30:00')
+date2 = dmy_hms('11-12-2017 10:00:00')
+
+as.numeric(date2 - date2, units = "mins")
+
+
+
+floor_date(dmy_hms('13-12-2017 23:59:59'), unit = "day")
+floor_date(dmy_hms('13-12-2017 23:59:59'), unit = "hour")
+floor_date(dmy_hms('13-12-2017 23:59:59'), unit = "minute")
+
+
+
+d<-now()
+
+ds <- d + weeks(0:5)
+
+
+now() + years(0:10)
